@@ -29,7 +29,7 @@ jobs:
           NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
           NPM_PASS: ${{ secrets.NPM_PASS }}
           NPM_USER: ${{ secrets.NPM_USER }}
-          NPM_REGISTRY: "https://registrynpm.storefrontcloud.io"
+          NPM_REGISTRY: "https://registry.stage.vuestorefront.cloud"
 
   deploy:
     runs-on: ubuntu-latest
