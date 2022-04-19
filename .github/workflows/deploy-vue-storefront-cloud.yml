@@ -19,17 +19,11 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: ${{ secrets.PROJECT_NAME }}-storefrontcloud-io/vue-storefront:${{ github.sha }}
-          registry: registry.vuestorefront.cloud
+          registry: registry.stage.vuestorefront.cloud
           username: ${{ secrets.CLOUD_USERNAME }}
           password: ${{ secrets.CLOUD_PASSWORD }}
           dockerfile: .vuestorefrontcloud/docker/Dockerfile
           buildoptions: "--compress"
-          buildargs: NPM_EMAIL,NPM_PASS,NPM_USER,NPM_REGISTRY
-        env:
-          NPM_EMAIL: ${{ secrets.NPM_EMAIL }}
-          NPM_PASS: ${{ secrets.NPM_PASS }}
-          NPM_USER: ${{ secrets.NPM_USER }}
-          NPM_REGISTRY: "https://registry.stage.vuestorefront.cloud"
 
   deploy:
     runs-on: ubuntu-latest
